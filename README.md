@@ -5,7 +5,7 @@ The purpose of the two instances are as follows:
 - neo4j-app -- GraphDB for Graphileon App data
 - neo4j-data -- GraphDB Store for data (in this case itsm storage)
 
-Because Graphileon ist not yet available as a "server" edition, it is not installed.
+Because we currently only have a personal edition license (a.k.a. free) of Graphileon and this edition is intended for single-user use.
 
 ## Requirements
 You need to have Virtualbox and Vagrant installed on your machine and that's it.
