@@ -32,8 +32,8 @@ HOSTS = {
 # Variant with graphileon running in a separate VM with a Desktop Environment.
 # This is not really functional because Graphileon cannot be run headless.
 # HOSTS = {
-#    "app-graphdb" => [NETWORK+"10", RAM, GUI, BOX],
-#    "data-graphdb" => [NETWORK+"11", RAM, GUI, BOX],
+#    "neo4j-app" => [NETWORK+"10", RAM, GUI, BOX],
+#    "neo4j-data" => [NETWORK+"11", RAM, GUI, BOX],
 #    # "graphileon" => [NETWORK+"12", RAM, GUI, "peru/ubuntu-18.04-desktop-amd64"]
 # }
 
