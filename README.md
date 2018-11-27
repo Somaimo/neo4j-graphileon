@@ -11,6 +11,46 @@ Because we currently only have a personal edition license (a.k.a. free) of Graph
 You need to have Virtualbox and Vagrant installed on your machine and that's it.
 
 ## Networking
+
+### Diagram
+Simple network diagram showing open ports and connection endpoints in each vm.
+
+         +----------------------------------------------+
+         |                                              |
+         |                                              |
+         |                                              |
+     +---+  +------------------------------------+      +----+     +--------------------+
+     |   |  |                                    |      |    |     |                    |
+     |   |  |   bolt://graphy@192.168.50.10:7687 <----------------->pgraphileon         |
+     |   |  |                                    |      |    |     | appadata andilogic |
+<-----------+                                    |      |    |     |                    |
+     |   |  |   neo4j Browser                    |      |    |     |                    |
+     |   |  |   http://192.168.50.10:7474/       +---+  |    |     |                    |
+     |   |  |                                    |      |    |     |                    |
+     |   |  +------------------------------------+      |    |     |                    |
+     |   |    neo4j-app VM                              |    |     |                    |
+     |   |                                              |    |     |                    |
+     |   |                                              |    |     |                    |
+     |   |                                              |    |     |                    |
+     |   |                                              |    |     |                    |
+     |   |  +------------------------------------+      |    |     |                    |
+     |   |  |                                    |      |    |     |                    |
+     |   |  |   bolt://graphy@192.168.50.11:7687 <----------------->rusere/vservice     |
+     |   |  |                                    |      |    |     |adata               |
+ <----------+                                    |      |    |     |                    |
+     |   |  |   neo4j Browser                    |      |    |     |                    |
+     |   |  |   http://192.168.50.11:7474/       +---+  |    |     |                    |
+     |   |  |                                    |      |    |     |                    |
+     +---+  +------------------------------------+      +----+     +--------------------+
+     NAT |    neo4j-data VM                             |Host      Graphileon App
+     Net |                                              |Net
+         |                                              |
+         |                                              |
+         +----------------------------------------------+
+         Virtualbox
+
+
+
 The `virtual machines` have two NICs and are dual homed (this requires first time Admin rights with virtualbox to setup the host only network).
 
 - Subnet 1
