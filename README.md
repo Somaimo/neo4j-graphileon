@@ -15,40 +15,38 @@ You need to have Virtualbox and Vagrant installed on your machine and that's it.
 ### Diagram
 Simple network diagram showing open ports and connection endpoints in each vm.
 
-```
+```      ,+--Virtualbox
          +----------------------------------------------+
          |                                              |
          |                                              |
-         |                                              |
+         |  ,+--neo4j-app VM                            |          ,+--Graphileon App
      +---+  +------------------------------------+      +----+     +--------------------+
      |   |  |                                    |      |    |     |                    |
-     |   |  |   bolt://graphy@192.168.50.10:7687 <----------------->pgraphileon         |
-     |   |  |                                    |      |    |     | appadata andilogic |
+     |   |  |   bolt://graphy@192.168.50.10:7687 <-----------------> graphileon         |
+     |   |  |                                    |      |    |     | appadata and logic |
 <-----------+                                    |      |    |     |                    |
      |   |  |   neo4j Browser                    |      |    |     |                    |
      |   |  |   http://192.168.50.10:7474/       +---+  |    |     |                    |
      |   |  |                                    |      |    |     |                    |
      |   |  +------------------------------------+      |    |     |                    |
-     |   |    neo4j-app VM                              |    |     |                    |
      |   |                                              |    |     |                    |
      |   |                                              |    |     |                    |
      |   |                                              |    |     |                    |
      |   |                                              |    |     |                    |
+     |   |  ,+--neo4j-data VM                           |    |     |                    |
      |   |  +------------------------------------+      |    |     |                    |
      |   |  |                                    |      |    |     |                    |
-     |   |  |   bolt://graphy@192.168.50.11:7687 <----------------->rusere/vservice     |
-     |   |  |                                    |      |    |     |adata               |
+     |   |  |   bolt://graphy@192.168.50.11:7687 <-----------------> user / service     |
+     |   |  |                                    |      |    |     | data               |
  <----------+                                    |      |    |     |                    |
      |   |  |   neo4j Browser                    |      |    |     |                    |
      |   |  |   http://192.168.50.11:7474/       +---+  |    |     |                    |
      |   |  |                                    |      |    |     |                    |
      +---+  +------------------------------------+      +----+     +--------------------+
-     NAT |    neo4j-data VM                             |Host      Graphileon App
+     NAT |                                              |Host      
      Net |                                              |Net
-         |                                              |
-         |                                              |
          +----------------------------------------------+
-         Virtualbox
+         
 ```
 
 
