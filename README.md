@@ -17,41 +17,6 @@ Simple network diagram showing open ports and connection endpoints in each vm.
 ![Alt text](./network-diagram.svg)
 <img src="./network-diagram.svg">
 
-```      ,+--Virtualbox
-         +----------------------------------------------+
-         |                                              |
-         |                                              |
-         |  ,+--neo4j-app VM                            |          ,+--Graphileon App
-     +---+  +------------------------------------+      +----+     +--------------------+
-     |   |  |                                    |      |    |     |                    |
-     |   |  |   bolt://graphy@192.168.50.10:7687 <-----------------> graphileon         |
-     |   |  |                                    |      |    |     | appadata and logic |
-<-----------+                                    |      |    |     |                    |
-     |   |  |   neo4j Browser                    |      |    |     |                    |
-     |   |  |   http://192.168.50.10:7474/       +---+  |    |     |                    |
-     |   |  |                                    |      |    |     |                    |
-     |   |  +------------------------------------+      |    |     |                    |
-     |   |                                              |    |     |                    |
-     |   |                                              |    |     |                    |
-     |   |                                              |    |     |                    |
-     |   |                                              |    |     |                    |
-     |   |  ,+--neo4j-data VM                           |    |     |                    |
-     |   |  +------------------------------------+      |    |     |                    |
-     |   |  |                                    |      |    |     |                    |
-     |   |  |   bolt://graphy@192.168.50.11:7687 <-----------------> user / service     |
-     |   |  |                                    |      |    |     | data               |
- <----------+                                    |      |    |     |                    |
-     |   |  |   neo4j Browser                    |      |    |     |                    |
-     |   |  |   http://192.168.50.11:7474/       +---+  |    |     |                    |
-     |   |  |                                    |      |    |     |                    |
-     +---+  +------------------------------------+      +----+     +--------------------+
-     NAT |                                              |Host      
-     Net |                                              |Net
-         +----------------------------------------------+
-         
-```
-
-
 The `virtual machines` have two NICs and are dual homed (this requires first time Admin rights with virtualbox to setup the host only network).
 
 - Subnet 1
