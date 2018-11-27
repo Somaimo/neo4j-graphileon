@@ -14,6 +14,8 @@ You need to have Virtualbox and Vagrant installed on your machine and that's it.
 
 ### Diagram
 Simple network diagram showing open ports and connection endpoints in each vm.
+![Alt text](./network-diagram.svg)
+<img src="./network-diagram.svg">
 
 ```      ,+--Virtualbox
          +----------------------------------------------+
